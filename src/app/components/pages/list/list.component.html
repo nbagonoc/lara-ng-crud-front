@@ -20,9 +20,9 @@
               <td>{{item.weight}}</td>
               <td>{{item.size}}</td>
               <td>
-                <a [routerLink]="['/show/', item._id]" class="btn btn-outline-secondary btn-sm mr-1">View</a>
-                <a [routerLink]="['/edit/', item._id]" class="btn btn-outline-secondary btn-sm mr-1">Edit</a>
-                <button (click)="onDelete(item._id)" class="btn btn-outline-danger btn-sm mr-1">Delete</button>
+                <a [routerLink]="['/show/', item.id]" class="btn btn-outline-secondary btn-sm mr-1">View</a>
+                <a [routerLink]="['/edit/', item.id]" class="btn btn-outline-secondary btn-sm mr-1">Edit</a>
+                <button (click)="onDelete(item.id)" class="btn btn-outline-danger btn-sm mr-1">Delete</button>
               </td>
             </tr>
           </tbody>

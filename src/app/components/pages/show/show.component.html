@@ -11,8 +11,8 @@
           <p class="mb-0">Size: {{item.size}}</p>
           <hr>
           <a routerLink="/list" class="btn btn-outline-secondary btn-sm mr-1">Back</a>
-          <a [routerLink]="['/edit/', item._id]" class="btn btn-outline-secondary btn-sm mr-1">Edit</a>
-          <button (click)="onDelete(item._id)" class="btn btn-outline-danger btn-sm mr-1">Delete</button>
+          <a [routerLink]="['/edit/', item.id]" class="btn btn-outline-secondary btn-sm mr-1">Edit</a>
+          <button (click)="onDelete(item.id)" class="btn btn-outline-danger btn-sm mr-1">Delete</button>
         </div>
       </div>
     </div>

@@ -1,11 +1,15 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
+interface responseData {
+    data: any
+}
+
 @Injectable({
   providedIn: "root"
 })
 export class ItemService {
-  url = "http://localhost:5000/api/items";
+  url = "http://lara-crud.com/api/item";
 
   constructor(private http: HttpClient) {}
 
@@ -13,12 +17,13 @@ export class ItemService {
 
   // Create
   create(item) {
-    return this.http.post(this.url, item);
+    return this.http.post(this.url + "/create", item);
   }
 
   // Read
   reads() {
-    return this.http.get(this.url);
+    return this.http.get<responseData>(this.url + "/list");
+    // return this.http.get(this.url + "/list");
   }
 
   // Read (single)
@@ -28,11 +33,11 @@ export class ItemService {
 
   // Update
   update(item) {
-    return this.http.put(this.url + "/" + item._id, item);
+    return this.http.put(this.url + "/update/" + item.id, item);
   }
 
   // Delete
   delete(id) {
-    return this.http.delete(this.url + "/" + id);
+    return this.http.delete(this.url + "/delete/" + id);
   }
 }
